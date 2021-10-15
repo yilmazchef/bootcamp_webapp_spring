@@ -35,6 +35,31 @@ public class UserEntity {
     @Column(name = "pass_code")
     private String passCode;
 
+    public UserEntity withId(Integer id) {
+        this.id = id;
+        return this;
+    }
+
+    public UserEntity withRole(RoleEntity role) {
+        this.role = role;
+        return this;
+    }
+
+    public UserEntity withEmail(String email) {
+        this.email = email;
+        return this;
+    }
+
+    public UserEntity withPhone(String phone) {
+        this.phone = phone;
+        return this;
+    }
+
+    public UserEntity withPassCode(String passCode) {
+        this.passCode = passCode;
+        return this;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

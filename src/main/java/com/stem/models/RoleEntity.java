@@ -24,4 +24,13 @@ public class RoleEntity {
     @Column(name = "role_name", length = 50)
     private String roleName;
 
+    public RoleEntity withRoleId(Integer roleId) {
+        this.roleId = roleId;
+        return this;
+    }
+
+    public RoleEntity withRoleName(String roleName) {
+        this.roleName = roleName;
+        return this;
+    }
 }

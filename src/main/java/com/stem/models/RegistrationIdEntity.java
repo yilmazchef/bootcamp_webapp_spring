@@ -26,6 +26,16 @@ public class RegistrationIdEntity implements Serializable {
     @Column(name = "bootcamp_id", nullable = false)
     private Integer bootcampId;
 
+    public RegistrationIdEntity withChildId(Integer childId) {
+        this.childId = childId;
+        return this;
+    }
+
+    public RegistrationIdEntity withBootcampId(Integer bootcampId) {
+        this.bootcampId = bootcampId;
+        return this;
+    }
+
     @Override
     public int hashCode() {
         return Objects.hash(bootcampId, childId);

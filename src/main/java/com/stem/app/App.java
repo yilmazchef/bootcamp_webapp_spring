@@ -1,13 +1,8 @@
 package com.stem.app;
 
-import com.stem.models.*;
-import com.stem.repositories.ChildRepository;
-import com.stem.repositories.UserRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-import java.time.LocalDate;
 
 @SpringBootApplication
 public class App implements CommandLineRunner {
@@ -17,7 +12,7 @@ public class App implements CommandLineRunner {
     }
 
     @Override
-    public void run(String... args) throws Exception {
-
+    public void run(String... args) {
+        System.out.println("Application context is started..");
     }
 }

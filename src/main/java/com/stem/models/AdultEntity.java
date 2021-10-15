@@ -36,6 +36,31 @@ public class AdultEntity {
     @Column(name = "date_of_birth")
     private LocalDate dateOfBirth;
 
+    public AdultEntity withId(Integer id) {
+        this.id = id;
+        return this;
+    }
+
+    public AdultEntity withFirstName(String firstName) {
+        this.firstName = firstName;
+        return this;
+    }
+
+    public AdultEntity withLastName(String lastName) {
+        this.lastName = lastName;
+        return this;
+    }
+
+    public AdultEntity withUser(UserEntity user) {
+        this.user = user;
+        return this;
+    }
+
+    public AdultEntity withDateOfBirth(LocalDate dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
+        return this;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

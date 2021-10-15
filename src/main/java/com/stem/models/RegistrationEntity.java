@@ -20,4 +20,8 @@ public class RegistrationEntity {
     @EmbeddedId
     private RegistrationIdEntity id;
 
+    public RegistrationEntity withId(RegistrationIdEntity id) {
+        this.id = id;
+        return this;
+    }
 }

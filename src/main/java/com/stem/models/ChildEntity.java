@@ -38,5 +38,33 @@ public class ChildEntity {
     @Column(name = "date_of_birth")
     private LocalDate dateOfBirth;
 
+    public ChildEntity withId(Integer id) {
+        this.id = id;
+        return this;
+    }
 
+    public ChildEntity withAdult(AdultEntity adult) {
+        this.adult = adult;
+        return this;
+    }
+
+    public ChildEntity withFirstName(String firstName) {
+        this.firstName = firstName;
+        return this;
+    }
+
+    public ChildEntity withLastName(String lastName) {
+        this.lastName = lastName;
+        return this;
+    }
+
+    public ChildEntity withUser(UserEntity user) {
+        this.user = user;
+        return this;
+    }
+
+    public ChildEntity withDateOfBirth(LocalDate dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
+        return this;
+    }
 }

@@ -7,8 +7,6 @@ import lombok.ToString;
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.LocalTime;
-import java.util.ArrayList;
-import java.util.List;
 
 @Table(name = "bootcamp_events")
 @Entity
@@ -38,5 +36,33 @@ public class BootcampEntity {
     @Column(name = "image_url")
     private byte[] imageUrl;
 
+    public BootcampEntity withId(Integer id) {
+        this.id = id;
+        return this;
+    }
 
+    public BootcampEntity withTitle(String title) {
+        this.title = title;
+        return this;
+    }
+
+    public BootcampEntity withDescription(String description) {
+        this.description = description;
+        return this;
+    }
+
+    public BootcampEntity withEventDate(LocalDate eventDate) {
+        this.eventDate = eventDate;
+        return this;
+    }
+
+    public BootcampEntity withEventTime(LocalTime eventTime) {
+        this.eventTime = eventTime;
+        return this;
+    }
+
+    public BootcampEntity withImageUrl(byte[] imageUrl) {
+        this.imageUrl = imageUrl;
+        return this;
+    }
 }
