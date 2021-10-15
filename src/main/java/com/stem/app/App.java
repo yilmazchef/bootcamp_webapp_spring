@@ -1,4 +1,4 @@
-package com.stem.bootcampwebapp;
+package com.stem.app;
 
 import com.stem.models.*;
 import org.springframework.boot.SpringApplication;
@@ -7,10 +7,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import java.time.LocalDate;
 
 @SpringBootApplication
-public class BootCampWebAppApplication {
+public class App {
 
     public static void main(String[] args) {
-        SpringApplication.run(BootCampWebAppApplication.class, args);
+        SpringApplication.run(App.class, args);
     }
 
     public void registerChildToBootCamp() {

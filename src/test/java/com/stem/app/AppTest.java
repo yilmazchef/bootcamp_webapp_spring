@@ -1,10 +1,10 @@
-package com.stem.bootcampwebapp;
+package com.stem.app;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class BootCampWebAppApplicationTests {
+class AppTest {
 
     @Test
     void contextLoads() {
