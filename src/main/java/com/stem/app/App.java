@@ -40,9 +40,13 @@ public class App {
         bootcamp.setTitle("Python");
 
 
-        BootcampRegistration registration = new BootcampRegistration();
-        registration.setChild(child);
-        registration.setBootcamp(bootcamp);
+        Registration registration = new Registration();
+
+        RegistrationId registrationId = new RegistrationId();
+        registrationId.setChildId(1);
+        registrationId.setBootcampId(1);
+
+        registration.setId(registrationId);
 
 
     }
