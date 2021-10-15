@@ -15,7 +15,7 @@ import java.util.List;
 @Getter
 @Setter
 @ToString(onlyExplicitlyIncluded = true)
-public class BootcampEvent {
+public class Bootcamp {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

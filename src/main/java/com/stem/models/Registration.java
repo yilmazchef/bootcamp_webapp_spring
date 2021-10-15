@@ -5,9 +5,8 @@ import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
+import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Table(name = "bootcamp_registrations")
@@ -16,14 +15,9 @@ import javax.persistence.Table;
 @Setter
 @RequiredArgsConstructor
 @ToString(onlyExplicitlyIncluded = true)
-public class BootcampRegistration {
+public class Registration {
 
-    @JoinColumn
-    @ManyToOne
-    private Child child;
-
-    @JoinColumn
-    @ManyToOne
-    private BootcampEvent bootcamp;
+    @EmbeddedId
+    private RegistrationId id;
 
 }

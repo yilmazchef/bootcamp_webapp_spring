@@ -35,7 +35,7 @@ public class App {
 
         child.setUser(childUser);
 
-        BootcampEvent bootcamp = new BootcampEvent();
+        Bootcamp bootcamp = new Bootcamp();
         bootcamp.setId(1);
         bootcamp.setTitle("Python");
 

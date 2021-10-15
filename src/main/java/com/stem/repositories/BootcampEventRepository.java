@@ -1,7 +1,7 @@
 package com.stem.repositories;
 
-import com.stem.models.BootcampEvent;
+import com.stem.models.Bootcamp;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface BootcampEventRepository extends JpaRepository<BootcampEvent, Integer> {
+public interface BootcampEventRepository extends JpaRepository<Bootcamp, Integer> {
 }
