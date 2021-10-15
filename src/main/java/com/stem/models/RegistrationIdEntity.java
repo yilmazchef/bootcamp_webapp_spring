@@ -14,7 +14,7 @@ import java.util.Objects;
 @Getter
 @Setter
 @ToString(onlyExplicitlyIncluded = true)
-public class RegistrationId implements Serializable {
+public class RegistrationIdEntity implements Serializable {
 
     private static final long serialVersionUID = 7580751745009533881L;
 
@@ -35,7 +35,7 @@ public class RegistrationId implements Serializable {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
-        RegistrationId entity = (RegistrationId) o;
+        RegistrationIdEntity entity = (RegistrationIdEntity) o;
         return Objects.equals(this.bootcampId, entity.bootcampId) &&
                 Objects.equals(this.childId, entity.childId);
     }

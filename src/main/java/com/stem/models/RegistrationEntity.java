@@ -15,9 +15,9 @@ import javax.persistence.Table;
 @Setter
 @RequiredArgsConstructor
 @ToString(onlyExplicitlyIncluded = true)
-public class Registration {
+public class RegistrationEntity {
 
     @EmbeddedId
-    private RegistrationId id;
+    private RegistrationIdEntity id;
 
 }

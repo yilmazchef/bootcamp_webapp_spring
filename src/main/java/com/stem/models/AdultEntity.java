@@ -4,26 +4,24 @@ import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+import org.hibernate.Hibernate;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.Objects;
 
-@Table(name = "children")
+@Table(name = "adults")
 @Entity
 @Getter
 @Setter
-@RequiredArgsConstructor
 @ToString(onlyExplicitlyIncluded = true)
-public class Child {
+@RequiredArgsConstructor
+public class AdultEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "child_id", nullable = false)
+    @Column(name = "adult_id", nullable = false)
     private Integer id;
-
-    @ManyToOne(optional = false)
-    @JoinColumn(name = "adult_id", nullable = false)
-    private Adult adult;
 
     @Column(name = "first_name", nullable = false, length = 100)
     private String firstName;
@@ -33,10 +31,21 @@ public class Child {
 
     @ManyToOne(optional = false)
     @JoinColumn(name = "user_id", nullable = false)
-    private User user;
+    private UserEntity user;
 
     @Column(name = "date_of_birth")
     private LocalDate dateOfBirth;
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
+        AdultEntity adult = (AdultEntity) o;
+        return id != null && Objects.equals(id, adult.id);
+    }
 
+    @Override
+    public int hashCode() {
+        return 0;
+    }
 }

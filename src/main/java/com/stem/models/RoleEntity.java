@@ -15,7 +15,7 @@ import javax.persistence.*;
 @Setter
 @ToString(onlyExplicitlyIncluded = true)
 @RequiredArgsConstructor
-public class Role {
+public class RoleEntity {
 
     @Id
     @Column(name = "role_id", nullable = false)
