@@ -49,7 +49,7 @@ public record UserCtrl(UserRepository userRepository, UserMapper userMapper) {
             @RequestParam(required = false, defaultValue = "1") Integer pageNo,
             @RequestParam(required = false, defaultValue = "50") Integer pageSize) {
 
-        return ResponseEntity.ok(email.isEmpty() ? // IF NAME IS EMPTY
+        return ResponseEntity.ok(phone.isEmpty() ? // IF NAME IS EMPTY
                 userRepository
                         .findAll(PageRequest.of(pageNo, pageSize))
                         .stream()
@@ -57,7 +57,7 @@ public record UserCtrl(UserRepository userRepository, UserMapper userMapper) {
                         .toList()
                 : // IF NAME IS NOT EMPTY
                 userRepository
-                        .findAll(Example.of(new UserEntity().withEmail(email)), PageRequest.of(pageNo, pageSize))
+                        .findAll(Example.of(new UserEntity().withEmail(phone)), PageRequest.of(pageNo, pageSize))
                         .stream()
                         .map(userMapper::toResponse)
                         .toList()
@@ -84,7 +84,7 @@ public record UserCtrl(UserRepository userRepository, UserMapper userMapper) {
                         .findByEmailContainingIgnoreCase(email)
                         .map(userMapper::toResponse)
                         .map(response -> ResponseEntity.status(HttpStatus.FOUND).body(response))
-                        .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "user NOT found!"))
+                        .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "user NOT found!"));
     }
 
 
