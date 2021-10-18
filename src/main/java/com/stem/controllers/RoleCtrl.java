@@ -5,8 +5,6 @@ import com.stem.models.RoleEntity;
 import com.stem.models.RoleRequest;
 import com.stem.models.RoleResponse;
 import com.stem.repositories.RoleRepository;
-import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.http.HttpStatus;
@@ -20,11 +18,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("api/v1/roles")
-@RequiredArgsConstructor(onConstructor = @__(@Autowired))
-public class RoleCtrl {
-
-    private final RoleRepository roleRepository;
-    private final RoleMapper roleMapper;
+public record RoleCtrl(RoleRepository roleRepository, RoleMapper roleMapper) {
 
     @PostMapping
     @ResponseStatus(HttpStatus.OK)

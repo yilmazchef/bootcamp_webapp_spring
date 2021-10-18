@@ -5,26 +5,22 @@ import com.stem.models.UserEntity;
 import com.stem.models.UserRequest;
 import com.stem.models.UserResponse;
 import com.stem.repositories.UserRepository;
-import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
 @RestController
 @RequestMapping("api/v1/users/")
-@RequiredArgsConstructor(onConstructor = @__(@Autowired))
-public class UserCtrl {
-
-    private final UserRepository userRepository;
-    private final UserMapper userMapper;
+public record UserCtrl(UserRepository userRepository, UserMapper userMapper) {
 
     @PostMapping
     @ResponseStatus(HttpStatus.OK)
+    @Transactional
     public UserResponse postUser(@RequestBody UserRequest request,
                                  @RequestParam(required = false) Integer userId) {
 
@@ -50,6 +46,7 @@ public class UserCtrl {
 
     @GetMapping("many")
     @ResponseStatus(HttpStatus.FOUND)
+    @Transactional
     public List<UserResponse> getUserList(
             @RequestParam(required = false) String phone,
             @RequestParam(required = false, defaultValue = "1") Integer pageNo,
@@ -72,6 +69,7 @@ public class UserCtrl {
 
     @GetMapping("one")
     @ResponseStatus(HttpStatus.FOUND)
+    @Transactional
     public UserResponse getUser(@RequestParam(required = false) Integer userId,
                                 @RequestParam(required = false) String email) {
 
