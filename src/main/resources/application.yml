@@ -1,0 +1,40 @@
+server:
+  port: ${PORT:8080}
+
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: create
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    properties:
+      hibernate:
+        search:
+          backend:
+            directory:
+              type: local-heap
+  data:
+    jpa:
+      repositories:
+        enabled: true
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:mysql://db_server:3306/bootcampdb?createDatabaseIfNotExist=true&autoReconnect=true&useSSL=false&allowPublicKeyRetrieval=true}
+    username: ${SPRING_DATASOURCE_USERNAME:bootcamp}
+    password: ${SPRING_DATASOURCE_PASSWORD:bootcamp}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    initialization-mode: always
+  security:
+    user:
+      name: ${SPRING_SECURITY_USERNAME}
+      password: ${SPRING_SECURITY_PASSWORD}
+      roles: ${SPRING_SECURITY_ROLES}
+
+  application:
+    name: bootcamp-spring-boot-api
+
+logging:
+  level:
+    org.zalando.logbook: TRACE
+
+
+
+
