@@ -7,7 +7,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-@OpenAPIDefinition(info = @Info(title = "Bootcamp API", version = "1.0", description = "Bootcamp Information"))
+@OpenAPIDefinition(info = @Info(title = "Bootcamp API", version = "1.0", description = "Bootcamp API aims to organize bootcamp events for the students (children). Their parents can register children to bootcamps."))
 public class App implements CommandLineRunner {
 
     public static void main(String[] args) {

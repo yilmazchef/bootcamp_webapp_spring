@@ -4,7 +4,7 @@ server:
 spring:
   jpa:
     hibernate:
-      ddl-auto: create
+      ddl-auto: validate
     database-platform: org.hibernate.dialect.MySQL8Dialect
     properties:
       hibernate:
@@ -21,7 +21,6 @@ spring:
     username: ${SPRING_DATASOURCE_USERNAME:bootcamp}
     password: ${SPRING_DATASOURCE_PASSWORD:bootcamp}
     driver-class-name: com.mysql.cj.jdbc.Driver
-    initialization-mode: always
   security:
     user:
       name: ${SPRING_SECURITY_USERNAME}
@@ -30,6 +29,9 @@ spring:
 
   application:
     name: bootcamp-spring-boot-api
+  sql:
+    init:
+      mode: always
 
 logging:
   level:
