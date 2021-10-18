@@ -17,7 +17,7 @@ spring:
       repositories:
         enabled: true
   datasource:
-    url: ${SPRING_DATASOURCE_URL:jdbc:mysql://db_server:3306/bootcampdb?createDatabaseIfNotExist=true&autoReconnect=true&useSSL=false&allowPublicKeyRetrieval=true}
+    url: ${SPRING_DATASOURCE_URL:jdbc:mysql://localhost:3306/bootcampdb?createDatabaseIfNotExist=true&autoReconnect=true&useSSL=false&allowPublicKeyRetrieval=true}
     username: ${SPRING_DATASOURCE_USERNAME:bootcamp}
     password: ${SPRING_DATASOURCE_PASSWORD:bootcamp}
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -29,9 +29,6 @@ spring:
 
   application:
     name: bootcamp-spring-boot-api
-  sql:
-    init:
-      mode: always
 
 logging:
   level:

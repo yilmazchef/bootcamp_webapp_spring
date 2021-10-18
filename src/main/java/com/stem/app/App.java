@@ -2,20 +2,17 @@ package com.stem.app;
 
 import io.swagger.v3.oas.annotations.OpenAPIDefinition;
 import io.swagger.v3.oas.annotations.info.Info;
-import org.springframework.boot.CommandLineRunner;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+@Slf4j
 @SpringBootApplication
 @OpenAPIDefinition(info = @Info(title = "Bootcamp API", version = "1.0", description = "Bootcamp API aims to organize bootcamp events for the students (children). Their parents can register children to bootcamps."))
-public class App implements CommandLineRunner {
+public class App {
 
     public static void main(String[] args) {
-        SpringApplication.run(App.class, args);
-    }
-
-    @Override
-    public void run(String... args) {
-        System.out.println("Application context is started..");
+        final var applicationContext = SpringApplication.run(App.class, args);
+        log.info("Application active: " + applicationContext.isActive());
     }
 }
